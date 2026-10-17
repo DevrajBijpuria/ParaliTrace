@@ -219,6 +219,7 @@ Every page has a short plain-English summary for readers who don't work with dat
   ├── project/             dbt project: staging, silver, gold, ops models; seeds; tests
   ├── ml/                  train_forecast.py, predict_live.py, results/
   ├── streamlit_app/       app.py + pages/
+  ├── snowflake/           setup.sql: database, schemas, stage, Snowpipes, roles
   ├── airflow/
   │   ├── Dockerfile, requirements-*.txt
   │   ├── dags/            ingest_hourly, ingest_fires, transform_and_forecast, common.py
@@ -234,7 +235,7 @@ Every page has a short plain-English summary for readers who don't work with dat
 **Prerequisites:** Docker Desktop (WSL2, 8 GB or more), Python 3.12, an AWS S3 bucket, a Snowflake account, a free NASA FIRMS map key, and optionally a Gemini API key.
 
 1. **Configure secrets.** Create `.env` in the root (Snowflake, AWS and FIRMS credentials) and `streamlit_app/.streamlit/secrets.toml` for the app. Both are gitignored.
-2. **Create the Snowflake objects** (database, schemas, stages, pipes, roles) with `setup.sql`.
+2. **Create the Snowflake objects** (database, schemas, stage, Snowpipes, roles) with [`snowflake/setup.sql`](snowflake/setup.sql)..
 3. **Start Kafka and Airflow:**
 ```bash
    docker compose -f docker-compose.yml -f docker-compose.airflow.yml up -d --build
