@@ -212,17 +212,19 @@ Every page has a short plain-English summary for readers who don't work with dat
 ## Project layout
 
 ```
-nasa/
-├── assets/              README images
-├── Kafka/               producers, Spark consumers, checkpoints (gitignored)
-├── schemas/             Avro schemas (.avsc)
-├── project/             dbt project: staging, silver, gold, ops models; seeds; tests
-├── ml/                  train_forecast.py, predict_live.py, results/, models/ (gitignored)
-├── streamlit_app/       app.py + pages/
-├── airflow/             Dockerfile, requirements, dbt/profiles.yml
-├── dags/                ingest_hourly, ingest_fires, transform_and_forecast, common.py
-├── docker-compose.yml          Kafka + Schema Registry
-└── docker-compose.airflow.yml  Airflow (Postgres, api-server, scheduler, dag-processor)
+  ParaliTrace/
+  ├── assets/              README images
+  ├── Kafka/               producers + Spark consumers (checkpoints gitignored)
+  ├── schemas/             Avro schemas (.avsc)
+  ├── project/             dbt project: staging, silver, gold, ops models; seeds; tests
+  ├── ml/                  train_forecast.py, predict_live.py, results/
+  ├── streamlit_app/       app.py + pages/
+  ├── airflow/
+  │   ├── Dockerfile, requirements-*.txt
+  │   ├── dags/            ingest_hourly, ingest_fires, transform_and_forecast, common.py
+  │   └── dbt/profiles.yml
+  ├── docker-compose.yml          Kafka + Schema Registry
+  └── docker-compose.airflow.yml  Airflow (Postgres, api-server, scheduler, dag-processor)
 ```
 
 ---

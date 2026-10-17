@@ -11,3 +11,6 @@ __pycache__/
 *.pyc
 data/
 hs_err_pid*.log
+spark-tmp/
+**/spark-tmp/
+.user.yml

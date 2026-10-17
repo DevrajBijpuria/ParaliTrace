@@ -13,7 +13,7 @@ import yaml
 from dotenv import load_dotenv
 
 load_dotenv()
-HEADERS = {"X-API-Key": "210110b4ed2094c87ffdf83da56d4d47f4e6ba8b742979e2a2269e339a4570fb"}
+HEADERS = {"X-API-Key": os.environ["OPENAQ_API_KEY"]}
 BASE = "https://api.openaq.org/v3"
 
 with open("stations.yaml", encoding="utf-8") as f:
