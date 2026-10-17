@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_fires
+    columns:
+      - name: fire_detection_id
+        tests: [unique, not_null]
+      - name: acq_ts_utc
+        tests: [not_null]
+      - name: satellite_std
+        tests:
+          - accepted_values: {values: ['SNPP', 'NOAA20', 'NOAA21']}
+      - name: confidence
+        tests:
+          - accepted_values: {values: ['l', 'n', 'h']}
+      - name: daynight
+        tests:
+          - accepted_values: {values: ['D', 'N']}
+
+  - name: stg_aq
+    columns:
+      - name: aq_reading_id
+        tests: [unique, not_null]
+      - name: station_key
+        tests:
+          - not_null
+          - relationships: {to: ref('stations'), field: station_key}
+      - name: pm25
+        tests: [not_null]
+
+  - name: stg_weather
+    columns:
+      - name: weather_reading_id
+        tests: [unique, not_null]
+      - name: point_key
+        tests:
+          - not_null
+          - relationships: {to: ref('route_points'), field: point_key}
+
+  - name: stg_dead_letter
+    columns:
+      - name: error_reason
+        tests: [not_null]

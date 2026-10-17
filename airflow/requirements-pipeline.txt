@@ -1,0 +1,10 @@
+pyspark==4.2.0
+confluent-kafka[avro,schemaregistry]
+python-dotenv
+pyyaml
+requests
+pandas
+numpy
+lightgbm
+scikit-learn
+snowflake-connector-python[pandas]

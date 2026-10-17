@@ -1,0 +1,4 @@
+region_key,region_name,priority,min_lat,max_lat,min_lon,max_lon
+delhi_ncr,Delhi-NCR,1,28.20,28.95,76.80,77.60
+punjab,Punjab,2,29.50,32.55,73.85,76.95
+haryana,Haryana,3,27.60,30.95,74.45,77.60

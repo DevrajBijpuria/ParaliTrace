@@ -1,0 +1,25 @@
+{
+  "type": "record", "name": "WeatherRaw", "namespace": "paralitrace.weather",
+  "fields": [
+    {"name": "point_key",            "type": "string"},
+    {"name": "requested_lat",        "type": "double"},
+    {"name": "requested_lon",        "type": "double"},
+    {"name": "grid_lat",             "type": ["null","double"], "default": null},
+    {"name": "grid_lon",             "type": ["null","double"], "default": null},
+    {"name": "elevation",            "type": ["null","double"], "default": null},
+    {"name": "time_local",           "type": ["null","string"], "default": null},
+    {"name": "timezone",             "type": ["null","string"], "default": null},
+    {"name": "utc_offset_seconds",   "type": ["null","int"],    "default": null},
+    {"name": "wind_speed_10m",       "type": ["null","double"], "default": null},
+    {"name": "wind_direction_10m",   "type": ["null","double"], "default": null},
+    {"name": "wind_speed_100m",      "type": ["null","double"], "default": null},
+    {"name": "wind_direction_100m",  "type": ["null","double"], "default": null},
+    {"name": "temperature_2m",       "type": ["null","double"], "default": null},
+    {"name": "relative_humidity_2m", "type": ["null","double"], "default": null},
+    {"name": "precipitation",        "type": ["null","double"], "default": null},
+    {"name": "boundary_layer_height","type": ["null","double"], "default": null},
+    {"name": "source",               "type": "string"},
+    {"name": "request_window",       "type": "string"},
+    {"name": "ingested_at",          "type": "string"}
+  ]
+}

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: load_audit
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [source, load_date]
+
+  - name: dlq_summary
+    columns:
+      - name: source
+        tests: [not_null]
+
+  - name: source_freshness
+    columns:
+      - name: source
+        tests: [unique, not_null]
+      - name: freshness_status
+        tests:
+          - accepted_values:
+              values: ['OK', 'WARN', 'STALE', 'NO_DATA']

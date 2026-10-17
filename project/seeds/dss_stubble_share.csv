@@ -1,0 +1,15 @@
+date_ist,stubble_share_pct,source,note
+2023-11-07,37,dss_via_tribune,"article says 'air pollution', not PM2.5 explicitly"
+2024-10-23,16,dss_via_cse_theprint,season peak PM2.5 day
+2024-10-27,3,cse_analysis,"source not labelled; CSE says DSS/SAFAR"
+2024-11-25,6.99,dss_via_deccanherald,
+2024-11-26,5.64,dss_via_deccanherald,"same article also says 5.84"
+2025-10-05,0.22,dss_via_vajiram,
+2025-10-06,0,dss_via_vajiram,
+2025-10-17,2.8,dss_via_newslaundry,"WION quotes 2.62 around this date"
+2025-10-18,4.3,dss_via_newslaundry,
+2025-10-19,4.6,dss_via_newslaundry,
+2025-11-11,6.5,dss_via_tribune,"'pollution', not PM2.5 explicitly"
+2025-11-12,22.47,dss_via_wion,"Tribune: 22.4"
+2025-11-20,1.8,dss_via_deccanherald,
+2025-11-22,2.8,dss_via_tribune,

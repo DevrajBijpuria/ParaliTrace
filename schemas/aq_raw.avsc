@@ -1,0 +1,20 @@
+{
+  "type": "record", "name": "AqRaw", "namespace": "paralitrace.aq",
+  "fields": [
+    {"name": "station_key",      "type": "string"},
+    {"name": "location_id",      "type": "long"},
+    {"name": "sensor_id",        "type": "long"},
+    {"name": "parameter",        "type": ["null","string"], "default": null},
+    {"name": "units",            "type": ["null","string"], "default": null},
+    {"name": "value",            "type": ["null","double"], "default": null},
+    {"name": "datetime_from_utc","type": ["null","string"], "default": null},
+    {"name": "datetime_to_utc",  "type": ["null","string"], "default": null},
+    {"name": "observed_count",   "type": ["null","int"],    "default": null},
+    {"name": "expected_count",   "type": ["null","int"],    "default": null},
+    {"name": "percent_coverage", "type": ["null","double"], "default": null},
+    {"name": "has_flags",        "type": ["null","boolean"],"default": null},
+    {"name": "source",           "type": "string"},
+    {"name": "request_window",   "type": "string"},
+    {"name": "ingested_at",      "type": "string"}
+  ]
+}

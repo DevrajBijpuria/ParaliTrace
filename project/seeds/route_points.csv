@@ -1,0 +1,10 @@
+point_key,name,lat,lon,segment,route_order
+ferozepur,"Ferozepur, PB",30.93,74.61,punjab_west,1
+bathinda,"Bathinda, PB",30.21,74.95,punjab_south,2
+ludhiana,"Ludhiana, PB",30.90,75.85,punjab_central,3
+sangrur,"Sangrur, PB",30.25,75.84,punjab_central,4
+patiala,"Patiala, PB",30.34,76.39,punjab_east,5
+kaithal,"Kaithal, HR",29.80,76.40,haryana_north,6
+karnal,"Karnal, HR",29.69,76.99,haryana_north,7
+panipat,"Panipat, HR",29.39,76.97,haryana_south,8
+delhi,Delhi (central),28.63,77.22,receptor,9

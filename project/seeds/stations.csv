@@ -1,0 +1,11 @@
+station_key,name,location_id,pm25_sensor_id,lat,lon,zone,available_from,backfill_role
+new_delhi_airnow,New Delhi (AirNow),8118,23534,28.63576,77.22445,central,2016-11-09,full
+bahadurgarh,"Arya Nagar, Bahadurgarh - HSPCB",6936,14233904,28.6701,76.9254,west_upwind,2025-09-28,season_2025
+narela,"Narela, Delhi - DPCC",10485,12235056,28.822836,77.101981,north,2025-02-18,season_2025
+bawana,"Bawana, Delhi - DPCC",8472,12235294,28.7762,77.051074,north_west,2025-02-18,season_2025
+mundka,"Mundka, Delhi - DPCC",10486,12235303,28.684678,77.076574,west,2025-02-18,season_2025
+punjabi_bagh,"Punjabi Bagh, Delhi - DPCC",50,12234796,28.674045,77.131023,west_central,2025-02-18,season_2025
+anand_vihar,"Anand Vihar, New Delhi - DPCC",235,12235610,28.646835,77.316032,east,2025-02-18,season_2025
+rk_puram,"R K Puram, Delhi - DPCC",17,12234787,28.563262,77.186937,south,2025-02-18,season_2025
+gurugram_vikas_sadan,"Vikas Sadan, Gurugram - HSPCB",301,14258988,28.4501238,77.0263051,south_west,2025-10-01,season_2025
+noida_sector1,"Sector-1, Noida - UPPCB",6980,12235951,28.589247,77.321962,south_east,2025-02-18,season_2025

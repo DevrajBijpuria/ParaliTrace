@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_smoke_index_hourly
+    columns:
+      - name: hour_start_utc
+        tests:
+          - unique
+          - not_null
+          - relationships: {to: ref('dim_hour'), field: hour_start_utc}
+      - name: smoke_index
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+  - name: mart_delhi_pm25_vs_index
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [station_key, hour_start_utc]
+  - name: ml_features_hourly
+    columns:
+      - name: issue_hour_utc
+        tests: [unique, not_null]        
+  - name: mart_fires_daily_by_region
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [date_ist, region_key]

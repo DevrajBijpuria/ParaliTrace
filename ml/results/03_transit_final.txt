@@ -1,0 +1,73 @@
+here is the o/p of the model after rerun 
+Top features, 24h, full, test 2023:
+pm25_mean_24h            38.3
+pm25_max_24h             23.0
+pm25_now                 14.5
+ventilation_at_24h        2.2
+naive_log_lag3            2.1
+precip_24h                2.0
+pm25_lag24                1.8
+temp                      1.8
+pm25_lag1                 1.7
+smoke_index_log_lag12     1.5
+dtype: float64
+
+Top features, 48h, full, test 2023:
+pm25_max_24h             46.1
+pm25_mean_24h            15.5
+pm25_now                  7.1
+smoke_transit_log_48h     3.7
+ventilation_at_48h        3.5
+pm25_lag24                2.7
+temp                      2.4
+naive_log_lag3            2.4
+precip_24h                2.2
+pm25_lag1                 1.8
+dtype: float64
+
+MAE by test season:
+test_season             2023  2024  2025
+horizon_h model                         
+24        persistence   42.4  54.2  41.4
+          full          40.1  47.1  37.3
+          no_fire       40.4  46.1  36.3
+          index_only    41.1  45.6  36.6
+          naive_only    40.0  46.0  37.0
+          transit_only  40.4  46.7  38.7
+48        persistence   50.9  64.7  48.3
+          full          46.4  52.3  43.0
+          no_fire       46.4  53.9  42.0
+          index_only    46.3  53.7  43.9
+          naive_only    46.1  53.9  43.5
+          transit_only  46.0  53.4  42.4
+
+Peak-weeks MAE by test season:
+test_season             2023  2024  2025
+horizon_h model                         
+24        persistence   62.0  73.4  56.6
+          full          57.7  61.0  50.2
+          no_fire       58.8  60.3  48.4
+          index_only    59.2  59.0  49.2
+          naive_only    58.0  60.0  50.7
+          transit_only  58.4  61.0  52.8
+48        persistence   73.3  86.4  65.9
+          full          66.2  66.4  58.4
+          no_fire       64.6  69.7  57.0
+          index_only    65.4  68.6  60.1
+          naive_only    65.0  68.1  59.3
+          transit_only  64.7  68.2  58.1
+
+Fire-feature gain (MAE reduction, positive = fire helps), 95% CI:
+ horizon_h  test_season         comparison  fire_gain_mae  ci_low  ci_high
+        24         2023    full_vs_no_fire           0.28   -1.11     1.69
+        24         2023 transit_vs_no_fire          -0.05   -0.90     0.77
+        24         2024    full_vs_no_fire          -0.98   -2.64     0.54
+        24         2024 transit_vs_no_fire          -0.59   -1.94     0.66
+        24         2025    full_vs_no_fire          -1.06   -3.64     1.33
+        24         2025 transit_vs_no_fire          -2.44   -5.02    -0.35
+        48         2023    full_vs_no_fire          -0.09   -1.94     1.66
+        48         2023 transit_vs_no_fire           0.33   -1.04     1.60
+        48         2024    full_vs_no_fire           1.55   -1.04     4.16
+        48         2024 transit_vs_no_fire           0.45   -1.92     2.88
+        48         2025    full_vs_no_fire          -0.96   -3.05     1.10
+        48         2025 transit_vs_no_fire          -0.44   -1.94     1.02

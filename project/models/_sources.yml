@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    database: PARALITRACE
+    schema: RAW
+    loaded_at_field: _LOADED_AT
+    freshness:                     
+      warn_after: {count: 6, period: hour}
+    tables:
+      - name: FIRES_BRONZE
+      - name: AQ_BRONZE
+      - name: WEATHER_BRONZE
+      - name: DEAD_LETTER_BRONZE

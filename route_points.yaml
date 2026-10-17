@@ -1,0 +1,72 @@
+# Weather route points for ParaliTrace (Open-Meteo)
+# Ordered upwind -> downwind: Punjab burning belt -> Haryana -> Delhi.
+# Kafka key for weather.raw = point_key.
+
+route_points:
+  - point_key: ferozepur
+    name: "Ferozepur, PB"
+    lat: 30.93
+    lon: 74.61
+    segment: punjab_west
+
+  - point_key: bathinda
+    name: "Bathinda, PB"
+    lat: 30.21
+    lon: 74.95
+    segment: punjab_south
+
+  - point_key: ludhiana
+    name: "Ludhiana, PB"
+    lat: 30.90
+    lon: 75.85
+    segment: punjab_central
+
+  - point_key: sangrur
+    name: "Sangrur, PB"
+    lat: 30.25
+    lon: 75.84
+    segment: punjab_central
+
+  - point_key: patiala
+    name: "Patiala, PB"
+    lat: 30.34
+    lon: 76.39
+    segment: punjab_east
+
+  - point_key: kaithal
+    name: "Kaithal, HR"
+    lat: 29.80
+    lon: 76.40
+    segment: haryana_north
+
+  - point_key: karnal
+    name: "Karnal, HR"
+    lat: 29.69
+    lon: 76.99
+    segment: haryana_north
+
+  - point_key: panipat
+    name: "Panipat, HR"
+    lat: 29.39
+    lon: 76.97
+    segment: haryana_south
+
+  - point_key: delhi
+    name: "Delhi (central)"
+    lat: 28.63
+    lon: 77.22
+    segment: receptor
+
+hourly_variables:
+  - wind_speed_10m
+  - wind_direction_10m
+  - wind_speed_100m          # closer to the height smoke actually travels at
+  - wind_direction_100m
+  - temperature_2m
+  - relative_humidity_2m
+  - precipitation            # rain washes smoke out
+  - boundary_layer_height    # low BLH traps smoke over Delhi
+
+request_params:
+  timezone: Asia/Kolkata     # IST clock hours = :30 UTC, aligns with AQ hours
+  wind_speed_unit: ms

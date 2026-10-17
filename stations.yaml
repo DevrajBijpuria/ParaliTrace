@@ -1,0 +1,120 @@
+# Delhi-NCR PM2.5 stations for ParaliTrace (locked 2026-10-10)
+#
+# Coverage note: OpenAQ has NO CPCB data for Nov 2022 - Feb 2025 (old sensor IDs stop 2022-10-31,
+# new IDs start 2025-02-18). So:
+#   - 2023 and 2024 backfill: only new_delhi_airnow (backfill_role: full)
+#   - 2025 backfill + live: all stations
+# CPCB stations lag ~3 days on OpenAQ; live producer re-fetches the last 5 days each run.
+#
+# Coverage check, Nov 1-3 2025 (72 hourly rows = complete), shown as coverage_check.
+
+stations:
+  - station_key: new_delhi_airnow
+    name: "New Delhi (AirNow)"
+    location_id: 8118
+    pm25_sensor_id: 23534
+    lat: 28.63576
+    lon: 77.22445
+    zone: central
+    available_from: "2016-11-09"
+    backfill_role: full          
+    coverage_check: 72
+
+  - station_key: bahadurgarh
+    name: "Arya Nagar, Bahadurgarh - HSPCB"
+    location_id: 6936
+    pm25_sensor_id: 14233904
+    lat: 28.6701
+    lon: 76.9254
+    zone: west_upwind
+    available_from: "2025-09-28"
+    backfill_role: season_2025
+    coverage_check: 62
+
+  - station_key: narela
+    name: "Narela, Delhi - DPCC"
+    location_id: 10485
+    pm25_sensor_id: 12235056
+    lat: 28.822836
+    lon: 77.101981
+    zone: north
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 61
+
+  - station_key: bawana
+    name: "Bawana, Delhi - DPCC"
+    location_id: 8472
+    pm25_sensor_id: 12235294
+    lat: 28.7762
+    lon: 77.051074
+    zone: north_west
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 61
+
+  - station_key: mundka
+    name: "Mundka, Delhi - DPCC"
+    location_id: 10486
+    pm25_sensor_id: 12235303
+    lat: 28.684678
+    lon: 77.076574
+    zone: west
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 55
+
+  - station_key: punjabi_bagh
+    name: "Punjabi Bagh, Delhi - DPCC"
+    location_id: 50
+    pm25_sensor_id: 12234796
+    lat: 28.674045
+    lon: 77.131023
+    zone: west_central
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 59
+
+  - station_key: anand_vihar
+    name: "Anand Vihar, New Delhi - DPCC"
+    location_id: 235
+    pm25_sensor_id: 12235610
+    lat: 28.646835
+    lon: 77.316032
+    zone: east
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 62
+
+  - station_key: rk_puram
+    name: "R K Puram, Delhi - DPCC"
+    location_id: 17
+    pm25_sensor_id: 12234787
+    lat: 28.563262
+    lon: 77.186937
+    zone: south
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 61
+
+  - station_key: gurugram_vikas_sadan
+    name: "Vikas Sadan, Gurugram - HSPCB"
+    location_id: 301
+    pm25_sensor_id: 14258988
+    lat: 28.4501238
+    lon: 77.0263051
+    zone: south_west
+    available_from: "2025-10-01"
+    backfill_role: season_2025
+    coverage_check: 61
+
+  - station_key: noida_sector1
+    name: "Sector-1, Noida - UPPCB"
+    location_id: 6980
+    pm25_sensor_id: 12235951
+    lat: 28.589247
+    lon: 77.321962
+    zone: south_east
+    available_from: "2025-02-18"
+    backfill_role: season_2025
+    coverage_check: 62

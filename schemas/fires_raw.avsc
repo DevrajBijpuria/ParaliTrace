@@ -1,0 +1,23 @@
+{
+  "type": "record", "name": "FireRaw", "namespace": "paralitrace.fires",
+  "fields": [
+    {"name": "latitude",   "type": ["null","string"], "default": null},
+    {"name": "longitude",  "type": ["null","string"], "default": null},
+    {"name": "bright_ti4", "type": ["null","string"], "default": null},
+    {"name": "scan",       "type": ["null","string"], "default": null},
+    {"name": "track",      "type": ["null","string"], "default": null},
+    {"name": "acq_date",   "type": ["null","string"], "default": null},
+    {"name": "acq_time",   "type": ["null","string"], "default": null},
+    {"name": "satellite",  "type": ["null","string"], "default": null},
+    {"name": "instrument", "type": ["null","string"], "default": null},
+    {"name": "confidence", "type": ["null","string"], "default": null},
+    {"name": "version",    "type": ["null","string"], "default": null},
+    {"name": "bright_ti5", "type": ["null","string"], "default": null},
+    {"name": "frp",        "type": ["null","string"], "default": null},
+    {"name": "daynight",   "type": ["null","string"], "default": null},
+    {"name": "type",       "type": ["null","string"], "default": null},
+    {"name": "source",      "type": "string"},
+    {"name": "source_file", "type": "string"},
+    {"name": "ingested_at", "type": "string"}
+  ]
+}

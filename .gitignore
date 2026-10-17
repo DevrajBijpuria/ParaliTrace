@@ -1,0 +1,13 @@
+.env
+streamlit_app/.streamlit/secrets.toml
+Kafka/checkpoints/
+airflow/logs/
+logs/
+project/logs/
+project/target/
+project/dbt_packages/
+ml/models/
+__pycache__/
+*.pyc
+data/
+hs_err_pid*.log

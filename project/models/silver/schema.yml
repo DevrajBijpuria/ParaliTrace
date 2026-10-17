@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: dim_hour
+    description: "Hourly spine of IST clock hours (stored as :30 UTC starts) from 2023-09-15 to now."
+    columns:
+      - name: hour_start_utc
+        tests: [unique, not_null]
+      - name: date_ist
+        tests: [not_null]
+      - name: season
+        tests:
+          - accepted_values:
+              values: [2023, 2024, 2025, 2026]
+              quote: false
+
+  - name: dim_region                                   # NEW
+    description: "Conformed region dimension (bbox + priority), includes 'other'."
+    columns:
+      - name: region_key
+        tests: [unique, not_null]
+
+  - name: dim_station
+    columns:
+      - name: station_key
+        tests: [unique, not_null]
+      - name: distance_to_delhi_center_km
+        tests: [not_null]
+      - name: region_key                               # NEW
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_region'), field: region_key}
+
+  - name: dim_route_point
+    columns:
+      - name: point_key
+        tests: [unique, not_null]
+      - name: route_order
+        tests: [unique, not_null]
+      - name: region_key                               # NEW
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_region'), field: region_key}
+
+  - name: fct_aq_hourly
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [station_key, hour_start_utc]
+    columns:
+      - name: station_key
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_station'), field: station_key}
+      - name: hour_start_utc
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_hour'), field: hour_start_utc}
+
+  - name: fct_weather_hourly
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [point_key, hour_start_utc]
+    columns:
+      - name: point_key
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_route_point'), field: point_key}
+      - name: hour_start_utc                           # NEW
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_hour'), field: hour_start_utc}
+
+  - name: fct_fire_detection
+    columns:
+      - name: fire_id
+        tests: [unique, not_null]
+      - name: region_key
+        tests:
+          - accepted_values: {values: ['delhi_ncr', 'punjab', 'haryana', 'other']}
+          - relationships: {to: ref('dim_region'), field: region_key}    # NEW
+      - name: frp_mw
+        tests: [not_null]
+      - name: hour_start_utc                           # NEW
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_hour'), field: hour_start_utc}
